@@ -1,0 +1,109 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{ pageTitle }}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+
+   
+  <form [formGroup]="form" *ngIf="settingsReady">
+    <ion-list *ngIf="page == 'main'">
+      <ion-item>
+        <ion-label>{{ 'SETTINGS_OPTION1' | translate }}</ion-label>
+        <ion-toggle formControlName="option1"></ion-toggle>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>type</ion-label>
+        <ion-input [(ngModel)]="userItem.type"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>gender</ion-label>
+        <ion-input [(ngModel)]="userItem.gender"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>username</ion-label>
+        <ion-input [(ngModel)]="userItem.username"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>appKey</ion-label>
+        <ion-input [(ngModel)]="userItem.appKey"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>nickname</ion-label>
+        <ion-input [(ngModel)]="userItem.nickname"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>avatorThumbPath</ion-label>
+        <ion-input [(ngModel)]="userItem.avatorThumbPath"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>birthday</ion-label>
+        <ion-input [(ngModel)]="userItem.birthday"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>signature</ion-label>
+        <ion-input [(ngModel)]="userItem.signature"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>address</ion-label>
+        <ion-input [(ngModel)]="userItem.address"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>noteName</ion-label>
+        <ion-input [(ngModel)]="userItem.noteName"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>noteText</ion-label>
+        <ion-input [(ngModel)]="userItem.noteText"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>isNoDisturb</ion-label>
+        <ion-input [(ngModel)]="userItem.isNoDisturb"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>isInBlackList</ion-label>
+        <ion-input [(ngModel)]="userItem.isInBlackList"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>isFriend</ion-label>
+        <ion-input [(ngModel)]="userItem.isFriend"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>{{ 'SETTINGS_OPTION2' | translate }}</ion-label>
+        <ion-input formControlName="option2"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>{{ 'SETTINGS_OPTION3' | translate }}</ion-label>
+        <ion-select formControlName="option3">
+          <ion-option value="1" checked="true">1</ion-option>
+          <ion-option value="2">2</ion-option>
+          <ion-option value="3">3</ion-option>
+        </ion-select>
+      </ion-item>
+
+
+      <button ion-item [navPush]="subSettings" [navParams]="profileSettings">
+        {{ 'SETTINGS_PROFILE_BUTTON' | translate }}
+      </button>
+
+      <!-- <button ion-button block (click)="testSendMessage()">testSendMessage</button> -->
+      <button ion-button block (click)="logoutChat()">logout</button>
+    </ion-list>
+
+    <ion-list *ngIf="page == 'profile'">
+      <ion-item>
+        <ion-label>{{ 'SETTINGS_OPTION4' | translate }}</ion-label>
+        <ion-input formControlName="option4"></ion-input>
+      </ion-item>
+    </ion-list>
+  </form>
+
+</ion-content>
