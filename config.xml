@@ -84,5 +84,7 @@
     <plugin name="jmessage-phonegap-plugin" spec="^3.4.7">
         <variable name="APP_KEY" value="06b52d0a26703eb0431399f8" />
     </plugin>
+    <plugin name="cordova-plugin-camera" spec="^4.0.3" />
+    <plugin name="cordova-plugin-file" spec="^6.0.1" />
     <engine name="android" spec="7.0.0" />
 </widget>

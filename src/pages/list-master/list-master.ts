@@ -26,9 +26,12 @@ export class ListMasterPage {
    * The view loaded, let's query our items for the list
    */
   ionViewDidLoad() {
-    setTimeout(()=>{
-      this.getConversations();
-    },100)
+    try{
+      setTimeout(()=>{
+        this.getConversations();
+      },100)
+    }catch{}
+   
   }
 
   /**

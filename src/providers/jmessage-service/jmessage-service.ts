@@ -135,6 +135,8 @@ export class JmessageServiceProvider {
 
           this.login(account);
         },100) 
+      }else{
+        this.loader.dismiss();
       }
     }) 
   }

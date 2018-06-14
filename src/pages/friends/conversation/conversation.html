@@ -38,7 +38,7 @@
 
           <ion-item   *ngIf="item.isSend">
               <ion-avatar item-end>
-                <img src="https://www.popochiu.com/upload/2018-02-06/laohao.jpeg">
+                <img [src]="item.avatarThumbPath">
               </ion-avatar>
               <h2 text-center>{{item.createTime | datePipe}}</h2>
               <h3 text-right>{{item.from.username}}</h3>

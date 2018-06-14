@@ -66,7 +66,12 @@ export class MyApp {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
 
-      this.Jmessage.init();//
+      try{
+        this.Jmessage.init();//
+      }catch(e){
+        console.log(e)
+      }
+     
 
       // 订阅重新登录事件
       this.events.subscribe('user:reLogin', () => {
@@ -152,9 +157,15 @@ export class MyApp {
     this.storage.get('account').then((result)=>{
       if(result && result.username && result.password){
         // alert("get storage:" + JSON.stringify(result))
-        this.Jmessage.login(result).then((result)=>{
-          this.nav.setRoot(this.rootPage);
-        }) ;;
+
+        try{
+          this.Jmessage.login(result).then((result)=>{
+            this.nav.setRoot(this.rootPage);
+          }) ;;
+        }catch(e){
+          console.log(e)
+        }
+        
       }else{
         this.events.publish('user:reLogin') 
       }
