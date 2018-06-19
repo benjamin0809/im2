@@ -19,7 +19,9 @@ export class ListMasterPage {
     public Jmessage: JmessageServiceProvider,
     public events:Events) {
  
-    
+      this.events.subscribe('refresh-conversation',()=>{
+        this.getConversations();
+      });
   }
 
   /**
@@ -108,7 +110,7 @@ export class ListMasterPage {
     // });
 
     for (let entry of this.currentItems) {
-      alert("entry:"+JSON.stringify(entry))
+      // alert("entry:"+JSON.stringify(entry))
       if(entry.unreadCount > 0){
            count ++;
         }

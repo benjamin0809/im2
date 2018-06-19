@@ -142,12 +142,11 @@ export class MyApp {
         const tab = tabs.getSelected();
         const activeVC = tab.getActive();
 
+        alert("(activeVC.name:"+activeVC.name)
         if(activeVC.name == "ConversationPage"){ 
           this.events.publish('receive-message-fromRoot',res);
         }else{
-          this.events.publish('jmessage.notificationReceived',()=>{
-
-          })
+          this.events.publish('jmessage.notificationReceived')
         }
 
       

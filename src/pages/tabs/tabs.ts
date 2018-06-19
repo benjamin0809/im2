@@ -32,9 +32,11 @@ export class TabsPage {
 
     // 当收到推送消息时（此时将消息存储）
     this.events.subscribe('jmessage.notificationReceived', () => {
-      // alert("tabs.ts jmessage.notificationReceived")
+      alert("tabs.ts jmessage.notificationReceived")
       this.newMessageCount ++;
       this._setTabMessageBadge();
+
+      this.events.publish('refresh-conversation');
     });
 
     this.events.subscribe('resetBadge-listmaster',(count)=>{
